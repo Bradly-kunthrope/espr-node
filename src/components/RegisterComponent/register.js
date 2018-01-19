@@ -1,9 +1,10 @@
 import React from 'react';
 import { format } from 'util';
+import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 // import api from './routes';
 const axios = require('axios');
 
-export default class Form extends React.Component{
+export default class Register extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -22,7 +23,7 @@ export default class Form extends React.Component{
 
     change = e => {
         // this.bind(e);
-        this.props.onChange({ [e.target.name]: e.target.value });
+        // this.props.onChange({ [e.target.name]: e.target.value });
         this.setState({
             [e.target.name]: e.target.value
         });
@@ -65,38 +66,53 @@ export default class Form extends React.Component{
     };
     render() {
         return (
-            <form>
-                <input
-                    name="first_name"
-                    placeholder="First name"
-                    value={this.state.first_name}
-                    onChange={e => this.change(e)}
-                />
+            <div className="container">
+            <Form>
+                <FormGroup>
+                    <Label for="FirstName">First Name</Label>
+                    <Input
+                        name="first_name"
+                        placeholder="First name"
+                        value={this.state.first_name}
+                        onChange={e => this.change(e)}
+                    />
+                </FormGroup>
                 <br />
-                <input
-                    name="last_name"
-                    placeholder="Last name"
-                    value={this.state.last_name}
-                    onChange={e => this.change(e)}
-                />
+                <FormGroup>
+                    <Label for="LastName">Last Name</Label>
+                    <Input
+                        name="last_name"
+                        placeholder="Last name"
+                        value={this.state.last_name}
+                        onChange={e => this.change(e)}
+                    />
+                </FormGroup>
                 <br />
-                <input
-                    name="email"
-                    placeholder="Email"
-                    value={this.state.email}
-                    onChange={e => this.change(e)}
-                />
+                <FormGroup>
+                    <Label for="email">Email</Label>
+                    <Input
+                        name="email"
+                        type="email"
+                        placeholder="Email"
+                        value={this.state.email}
+                        onChange={e => this.change(e)}
+                    />
+                </FormGroup>
                 <br />
-                <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    value={this.state.password}
-                    onChange={e => this.change(e)}
-                />
+                <FormGroup>
+                    <Label for="password">Password</Label>
+                    <Input
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        value={this.state.password}
+                        onChange={e => this.change(e)}
+                    />
+                </FormGroup>
                 <br />
-                <button onClick={e => this.onSubmit(e)}>Submit</button>
-             </form>
+                    <p align="center"><Button color="info" onClick={e => this.onSubmit(e)}>Submit</Button></p>
+             </Form>
+             </div>
         )
     }
 }
