@@ -1,3 +1,5 @@
+const uuid = require('uuid');
+
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -5,8 +7,8 @@ module.exports = {
       id: {
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID,
+        defaultValue: uuid()
       },
       r_date: {
         type: Sequelize.DATE,
@@ -28,7 +30,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       userId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         onDelete: 'CASCADE',
         references: {
           model: 'Users',

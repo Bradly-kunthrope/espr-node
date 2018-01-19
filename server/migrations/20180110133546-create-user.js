@@ -1,12 +1,15 @@
+const uuid = require('uuid');
+
 'use strict';
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Users', {
       id: {
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID,
+        defaultValue: uuid()
       },
       last_name: {
         type: Sequelize.STRING,

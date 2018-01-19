@@ -25,7 +25,7 @@ export default class Form extends React.Component{
         this.props.onChange({ [e.target.name]: e.target.value });
         this.setState({
             [e.target.name]: e.target.value
-        }, console.log(this.state));
+        });
     };
 
     

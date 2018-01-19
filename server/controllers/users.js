@@ -6,13 +6,13 @@ module.exports = {
         return User
             .create(req.body, { fields: Object.keys(req.body) })
             .then(user => res.status(201).send(user))
-            .catch(error => res.status(400).send(error));
+            .catch(error => res.status(500).send(error));
     },
     list(req, res) {
         return User
             .all()
             .then(user => res.status(200).send(user))
-            .catch(error => res.status(400).send(error));
+            .catch(error => res.status(500).send(error));
     },
     list(req, res) {
         return User
@@ -23,7 +23,7 @@ module.exports = {
                 }],
             })
             .then(user => res.status(200).send(user))
-            .catch(error => res.status(400).send(error));
+            .catch(error => res.status(500).send(error));
     },
     retrieve(req, res) {
         return User
@@ -41,7 +41,7 @@ module.exports = {
                 }
                 return res.status(200).send(user);
             })
-            .catch(error => res.status(400).send(error));
+            .catch(error => res.status(500).send(error));
     },
     update(req, res) {
         return User
@@ -60,9 +60,9 @@ module.exports = {
                 return user
                     .update(req.body, { fields: Object.keys(req.body) })
                     .then(() => res.status(200).send(user))  // Send back the updated user.
-                    .catch((error) => res.status(400).send(error));
+                    .catch((error) => res.status(500).send(error));
             })
-            .catch((error) => res.status(400).send(error));
+            .catch((error) => res.status(500).send(error));
     },
     destroy(req, res) {
         return User
