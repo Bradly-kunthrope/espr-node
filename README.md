@@ -1,54 +1,19 @@
 # React Fullstack (With Express, PostgreSQL, Sequelize, Sequelize-CLI, Gulp)
 
-## initial commands
+## Installation
 
 ```
-npm install -g create-react-app //install react starter kit globally on your computer
-create-react-app <name-of-app> //create a react starter kit on your folder with the app name as folder name
-npm install --save-dev nodemon //automatically restarts your server when changes were made
-npm install --save sequelize sequelize-cli
-sequelize init //initiate sequelize models, migrations, config for the project
+1. Download latest version of Node.js here: https://nodejs.org/en/download/
+2. Download latest version of PostgreSQL here: https://www.postgresql.org/download/
+3. Assuming that you have Git on your workstation, git clone this repository by typing: 
+git clone https://github.com/Bradly-kunthrope/espr-node/
 ```
-
-## configuration (to be copy-pasted to config.json)
+## Startup
 ```
-{
-  "development": {
-    "username": "postgres",
-    "password": "root",
-    "database": "db_development",
-    "host": "localhost",
-    "port": 5432,
-    "dialect": "postgres"
-  },
-  "test": {
-    "username": "postgres",
-    "password": "root",
-    "database": "db_test",
-    "host": "localhost",
-    "port": 5432,
-    "dialect": "postgres"
-  },
-  "production": {
-    "username": "postgres",
-    "password": "root",
-    "database": "db_production",
-    "host": "localhost",
-    "port": 5432,
-    "dialect": "postgres"
-  }
-}
+1. Open command line, then go to the directory in which the cloned repository is located
+2. At the command line, type "npm run start:all"
+3. The app should be working by now.
 ```
-## commands to add models and migrations to database*
-```
-sequelize db:create //will create the database specified in the config file
-sequelize db:migrate //should migrate table to postgres database but is not working yet 
-sequelize seed:create --name dummyData //create seed data 
-sequelize db:seed:all //migrate seed data to PostgreSQL database
-npm run dev //run server
-```
-
-****models and migration files have already been created. You may add more if you want to test/need to.***
-
+***For errors, please message me directly so I can help you.***
 
 https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize#express-setup
