@@ -4,7 +4,7 @@ const Cart = require('../models').Cart;
 module.exports = {
     create(req, res) {
         return User
-            .create(req.params.id, { fields: Object.keys(req.body) })
+            .create(req.body, { fields: Object.keys(req.body) })
             .then(user => res.status(201).send(user))
             .catch(error => res.status(400).send(error));
     },
